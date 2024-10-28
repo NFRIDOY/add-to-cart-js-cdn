@@ -3,6 +3,4 @@
 ## Installation
 
 1. ```git clone <this repository>```
-2. ```cd add-to-cart-js```
-3. ```npm i```
-4. ```npm run start```
+2. open `index.html` file on web browser
