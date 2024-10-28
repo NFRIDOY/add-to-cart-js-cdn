@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Add To Card</title>
+        <!-- <link rel="stylesheet" href="style.css" /> -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <style type="text/tailwindcss">
+            :root {
+                --main-color: #fd5542;
+            }
+            .main-bg {
+                /* background: var(--main-color); */
+                @apply bg-[color:var(--main-color)];
+            }
+            .main-text {
+                /* color: var(--main-color); */
+                @apply text-[color:var(--main-color)];
+            }
+            .main-border {
+                /* border: var(--main-color); */
+                @apply border-[color:var(--main-color)];
+            }
+            .main-btn {
+                @apply main-bg px-4 py-2 rounded-md text-white hover:bg-[#FF0021] cursor-pointer;
+            }
+            .secondary-btn {
+                @apply bg-white px-4 py-2 rounded-md text-[color:var(--main-color)] outline outline-[color:var(--main-color)] hover:bg-[color:var(--main-color)] hover:text-white cursor-pointer;
+            }
+            .card {
+                @apply relative bg-zinc-100 w-72 p-2 border-2 rounded-xl flex flex-col justify-between;
+            }
+            .newBadge {
+                @apply absolute -top-5 -left-8 -rotate-45 w-fit px-3 py-1 rounded-full bg-[color:var(--main-color)] text-white font-bold text-sm;
+            }
+
+            .cartItemCard {
+                @apply relative flex outline outline-white rounded-lg text-white mb-2;
+            }
+
+            .deleteItems {
+                @apply absolute -top-3 right-0 bg-white rounded-lg;
+            }
+            /* .cartItems {
+    @apply border p-3 flex justify-between items-center
+} */
+
+            .quantity-btn {
+                @apply bg-slate-200 text-black px-1 text-center;
+            }
+
+            .grandTotalPriceDiv {
+                @apply absolute bottom-0 bg-white w-full h-12 text-xl main-text flex justify-center items-center cursor-pointer;
+            }
+
+            #grandTotalPrice {
+                @apply pl-1;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header class="bg-zinc-200 py-2">
+            <nav class="flex items-center justify-between mx-auto max-w-5xl">
+                <div>
+                    <ul class="menu flex justify-start gap-x-4">
+                        <li>
+                            <span><a href="/">🎨</a></span>
+                        </li>
+                        <li>
+                            <span><a href="/">MENU</a></span>
+                        </li>
+                        <li>
+                            <span><a href="/">REWARDS</a></span>
+                        </li>
+                        <li>
+                            <span><a href="/">LOCATIONS</a></span>
+                        </li>
+                        <li>
+                            <span><a href="/">GIFT</a> CARDS</span>
+                        </li>
+                        <li>
+                            <span><a href="/">LOGIN</a></span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <button onclick="cartToggle()" class="text-3xl">🛒</button>
+                    <button
+                        class="order main-bg px-4 py-2 rounded-md text-white">
+                        Order Now
+                    </button>
+                </div>
+            </nav>
+        </header>
+        <main
+            class="relative mx-auto flex flex-col justify-center items-center gap-y-3 pt-10">
+            <h1 class="uppercase text-4xl">Chicken Crisper® Combos</h1>
+            <h5 class="space-x-1">
+                <span class="main-text">Menu</span>
+                <span>></span>
+                <span> Chicken Crisper® Combos </span>
+            </h5>
+            <p>
+                Find everything from our Big Mouth Burgers@.our always sizzling.
+                Full-on Fajitas and our famous Chicken Crispers®
+            </p>
+            <section>
+                <div></div>
+                <div
+                    id="itemCards"
+                    class="cards grid grid-cols-3 gap-x-2"></div>
+            </section>
+            <aside
+                id="cartContainer"
+                class="cartContainer absolute right-0 h-screen w-[18%] border-2 main-bg">
+                <div
+                    class="cartHeader h-16 bg-white flex justify-between items-center px-3 py-5">
+                    <div>
+                        <span id="itemCount" class="item">0</span>
+                        <span>Item</span>
+                    </div>
+                    <div class="secondary-btn" onclick="cartToggle()">
+                        Close
+                    </div>
+                </div>
+                <div id="cartItems" class="cartItems p-2 pt-5 space-y-5"></div>
+                <div class="grandTotalPriceDiv">
+                    <span> Place Order </span>
+                    <span id="grandTotalPrice"></span>
+                </div>
+            </aside>
+        </main>
+        <script src="index.js"></script>
+    </body>
+</html>

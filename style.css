@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --main-color: #fd5542
+
+}
+.main-bg {
+    /* background: var(--main-color); */
+    @apply bg-[color:var(--main-color)]
+}
+.main-text {
+    /* color: var(--main-color); */
+    @apply text-[color:var(--main-color)]
+}
+.main-border {
+    /* border: var(--main-color); */
+    @apply border-[color:var(--main-color)]
+}
+.main-btn {
+    @apply main-bg px-4 py-2 rounded-md text-white hover:bg-[#FF0021] cursor-pointer
+}
+.secondary-btn {
+    @apply bg-white px-4 py-2 rounded-md text-[color:var(--main-color)] outline outline-[color:var(--main-color)] hover:bg-[color:var(--main-color)] hover:text-white cursor-pointer
+}
+.card {
+    @apply relative bg-zinc-100 w-72 p-2 border-2 rounded-xl flex flex-col justify-between
+}
+.newBadge {
+    @apply absolute -top-5 -left-8 -rotate-45 w-fit px-3 py-1 rounded-full bg-[color:var(--main-color)] text-white font-bold text-sm
+}
+
+.cartItemCard {
+    @apply relative flex outline outline-white rounded-lg text-white mb-2
+}
+
+.deleteItems {
+    @apply absolute -top-3 right-0 bg-white rounded-lg
+}
+/* .cartItems {
+    @apply border p-3 flex justify-between items-center
+} */
+
+.quantity-btn {
+    @apply bg-slate-200 text-black px-1 text-center
+}
+
+
+/* .cartContainer {
+    display: none;
+} */
+
+/* .itemQuantity {
+    @apply w-10 bg-white text-black
+} */
+
+.grandTotalPriceDiv {
+    @apply absolute bottom-0 bg-white w-full h-12 text-xl main-text flex justify-center items-center cursor-pointer
+}
+
+#grandTotalPrice {
+    @apply pl-1
+}
